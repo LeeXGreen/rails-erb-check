@@ -19,5 +19,9 @@ if invalid.empty?
   puts "\e[32m#{valid.size + invalid.size} files, #{invalid.size} invalids\e[0m"
 else
   puts "\e[31m#{valid.size + invalid.size} files, #{invalid.size} invalids\e[0m"
+  puts "\e[31minvalid files:\e[0m"
+  invalid_files.each do |filepath|
+    puts filepath
+  end
   abort
 end
