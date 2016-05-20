@@ -20,8 +20,6 @@ if invalid.empty?
 else
   puts "\e[31m#{valid.size + invalid.size} files, #{invalid.size} invalids\e[0m"
   puts "\e[31minvalid files:\e[0m"
-  invalid_files.each do |filepath|
-    puts filepath
-  end
+  invalid.each { |filepath| puts filepath }
   abort
 end
