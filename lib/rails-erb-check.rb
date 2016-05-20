@@ -4,7 +4,8 @@ module RailsErbCheck
   def self.valid_syntax?(erb)
     begin
       ActionView::Template::Handlers::Erubis.new(erb).result
-    rescue SyntaxError
+    rescue SyntaxError => ex
+      p ex # do the simplest thing that works
       return false
     rescue Exception
       return true
